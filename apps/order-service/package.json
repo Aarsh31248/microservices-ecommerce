@@ -18,6 +18,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@clerk/fastify": "2.4.30",
     "fastify": "^5.5.0"
   }
 }

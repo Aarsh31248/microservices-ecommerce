@@ -2,7 +2,8 @@
   "name": "product-service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "dev": "pnpm dlx tsx --env-file=.env --watch src/index.ts",
     "check-types": "tsc --noEmit"
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/express": "1.7.30",
     "cors": "2.8.5",
     "express": "^5.0.0"
   },
