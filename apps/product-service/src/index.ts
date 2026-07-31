@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response} from "express"
 import cors from "cors";
 import { clerkMiddleware, getAuth } from "@clerk/express";
 import { shouldBeUser } from "./middleware/authMiddleware.js";
+import productRouter from "./routes/product.route";
 import categoryRouter from "./routes/category.route";
 
 const app = express();
@@ -28,6 +29,7 @@ app.get("/test", shouldBeUser, (req, res) => {
   res.json({ message: "Product service authenticated", userId: req.userId });
 });
 
+app.use("/products", productRouter);
 app.use("/categories", categoryRouter);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
