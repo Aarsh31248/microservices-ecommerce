@@ -13,11 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "@clerk/express": "1.7.30",
+    "@repo/product-db": "workspace:*",
     "cors": "2.8.5",
     "express": "^5.0.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@repo/types": "workspace:*",
     "@types/cors": "2.8.5",
     "@types/express": "^5.0.0"
   }
