@@ -14,6 +14,13 @@ router.get("/:id", async (req, res) => {
   res.status(200).json(user);
 });
 
+router.post("/", async (req, res) => {
+  type CreateParams = Parameters<typeof clerkClient.users.createUser>[0];
+  const newUser: CreateParams = req.body;
+  const user = await clerkClient.users.createUser(newUser);
+  res.status(200).json(user);
+});
+
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await clerkClient.users.deleteUser(id);

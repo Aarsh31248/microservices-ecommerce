@@ -1,6 +1,8 @@
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import { clerkMiddleware } from "@clerk/express";
+import { shouldBeAdmin } from "./middleware/authMiddleware.js";
+import userRoute from "./routes/user.route";
 
 const app = express();
 app.use(
@@ -19,6 +21,8 @@ app.get("/health", (req: Request, res: Response) => {
     timestamp: Date.now(),
   });
 });
+
+app.use("/users", shouldBeAdmin, userRoute);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.log(err);
