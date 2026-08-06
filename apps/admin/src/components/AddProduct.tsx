@@ -72,7 +72,7 @@ const AddProduct = () => {
     },
   });
 
-  const { isPending, error, data } = useQuery({
+  const { data } = useQuery({
     queryKey: ["categories"],
     queryFn: fetchCategories,
   });
